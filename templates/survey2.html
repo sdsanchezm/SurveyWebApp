@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container py-4">
+        <header>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-2">
+                    <h1 class="display-5 fw-bold">Instructions</h1>
+                    <p class="col-md-8">Please complete the following questions.</p>
+                    <!-- <p class="col-md-8">Text - Enter the text.</p> -->
+                    <p class="col-md-8">Yes/No - pick one of the 2 options.</p>
+                    <p class="col-md-8">List - Select an option from the list.</p>
+                    <p class="col-md-8">Please complete the following questions.</p>
+                    <p class="col-md-8 fw-bold text-danger">Please ensure that all your answers are included before submit.</p>
+                    <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
+                </div>
+            </div>
+        </header>
+        <nav></nav>
+        <main>
+          <form action="results.html" method="GET">
+            <div class="row align-items-md-stretch">
+                <!-- Card model -->
+                <!-- <div class="col-md-6 py-2">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>Add borders</h2>
+                        <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                        <button class="btn btn-outline-secondary" type="button">Example button</button>
+                    </div>
+                </div>  -->
+                <!-- Type text =================================================== -->
+                {% for item in data %}
+
+                <div class="col-md-6 py-2">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <p>{{ item.questionset_question }}</p>
+                        <div class="form-floating">
+                            <textarea required class="form-control" placeholder="answer here" name="textarea1" id="text1" style="height: 100px"></textarea>
+                            <label for="textlabel">Answer here</label>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Type Yes/No (bool) ===================================================-->
+                <!-- <div class="col-md-6 py-2">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <p>Yes/No - Have you been in Germany?</p>
+                        <input required class="form-check-input" type="radio" name="radio1" id="flexRadioDefault1">
+                        <label class="form-check-label" for="radio1">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" name="radio1" id="flexRadioDefault1">
+                        <label class="form-check-label" for="radio1">
+                            No
+                        </label>
+                    </div>
+                </div> -->
+                <!-- Type list =================================================== -->
+                <!-- <div class="col-md-6 py-2">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <p>List - Reason for traveling to Germany?</p>
+                        <select class="form-select" name="heyselect1" aria-label="Default select example" required>
+                            <option value="" disabled selected>Open this select menu</option>
+                            <option value="1-business">Business</option>
+                            <option value="2-toursit">Tourism</option>
+                            <option value="3-ocassional">Ocassional Travel</option>
+                        </select>
+                    </div>
+                </div> -->
+                <!-- Type radio =================================================== -->
+                <!-- <div class="col-md-6 py-2">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <p>Radio - Have you been in Germany?</p>
+                        <div class="form-check">
+                          <input required class="form-check-input" type="radio" name="q3" id="fq3">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                              1 time
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="q3" id="fq3">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                              2 times
+                          </label>
+                        </div>
+                        <input class="form-check-input" type="radio" name="q3" id="fq3">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            more than 2 times
+                        </label>
+                    </div>
+                </div> -->
+                <!-- Type checkbox ===================================================-->
+<!--                 <div class="col-md-6 py-2">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <p>Checkbox - Have you been in Germany?</p>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Yes
+                        </label>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            No
+                        </label>
+                    </div>
+                </div> -->
+                <!-- Submit button =================================================== -->
+                <div class="col-md-12 py-4">
+                    <button class="btn btn-primary container-fluid my-2" type="Submit">Submit Survey</button>
+                    <button class="btn btn-danger container-fluid my-2" type="Reset">Reset</button>
+                </div>
+            </div>
+          </form>
+        </main>
+        <footer>{{ data }}</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="index.js"></script> -->
+    
+    <script>
+
+    (()=>{
+        const token = window.location.pathname.split('/')[2];
+        console.log(token);
+        loadQuestions(token);
+    })();
+        async function loadQuestions(token){
+            let response = await fetch('/survey2/s7jcnova', {mode: 'no-cors'});
+
+            console.log(response.status); // 200
+            console.log(response.statusText); // OK
+
+            if (response.status === 200) {
+                let data = await response.text();
+                console.log(data);
+                console.log("asdasd");
+            }
+        }
+    </script>
+</body>
+</html>

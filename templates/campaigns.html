@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Campaigns
+{% endblock %}
+
+{% block main %}
+
+<div class="card mb-3" style="max-width: 740px;">
+  <div class="row g-0">
+
+    <div class="card-header text-center">
+      Campaigns
+    </div>
+    
+        <form class="needs-validation p-4" novalidate="">
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label"> <span class="fw-bold">Campaign Name </span><span class="text-muted">(Field required)</span></label>
+                <input name="questionName" type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid campaign name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <label for="lastName" class="form-label"> <span class="fw-bold">Select the Group Set </span><span class="text-muted">(Group Set required)</span></label>
+                <select class="form-select mb-3" aria-label=".form-select-lg example">
+                    <option value="notvalid" selected>Open this select menu</option>
+                    <option value="checkbox">1</option>
+                    <option value="radio">1</option>
+                    <option value="bool">1</option>
+                    <option value="text">1</option>
+                    <option value="list">1</option>
+                  </select>
+              </div>
+
+              <div class="col-sm-12">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">active</label>
+              </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+          </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

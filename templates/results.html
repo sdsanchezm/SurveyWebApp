@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+	<div id="resultsDiv"></div>
+	<a href="survey1.html">return</a>
+    <script type="text/javascript">
+	    const resultsNode = document.getElementById('resultsDiv');
+	    new URLSearchParams(window.location.search).forEach((v, n) => {
+	        resultsNode.append(`${n}: ${v}`);
+	        resultsNode.append(document.createElement('br'));
+	    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+<div class="col-md-6">
+<h1 class="display-6">Results</h1>
+    <form >
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Group Set</span>
+            <select class="form-select" name="gs-selector" aria-label="Default select example">
+                <option id="gs-selector" value="" selected>Open this select menu</option>
+                {% for item in data %}
+                    <option value="gs-{{ item.id }}" data-url="{{ item.urlname }}">{{ item.groupset_name }} - {{ item.urlname }}</option>
+                {% endfor %}
+            </select>
+            <button class="btn btn-primary" onclick="sendGroupset()" type="button" id="button-addon2">View</button>
+        </div>
+    </form>
+</div>
+
+<div class="row" id="graphs">
+    <!-- <div class="col-md-6 py-2 question"> -->
+        
+        <!-- <div class="col-md-6 pb-2">
+            <div class="card">
+                <div class="card-header text-center"><i class="bi bi-question-circle"></i>Test</div>
+                <div class="card-body">
+                    <h5 class="card-title">Test</h5>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="card-footer">
+                    <button onclick="dashboard_load()" class="btn btn-primary" type="button" >Reload</button>
+                </div>
+            </div>
+        </div> -->
+    <!-- </div> -->
+
+    <!-- <div id="graphs"></div> -->
+
+</div>
+
+
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js" integrity="sha512-tQYZBKe34uzoeOjY9jr3MX7R/mo7n25vnqbnrkskGr4D6YOoPYSpyafUAzQVjV6xAozAqUFIEFsCO4z8mnVBXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="/static/dashboard.js"></script>
+{% endblock %}

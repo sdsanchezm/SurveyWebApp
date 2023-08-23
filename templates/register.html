@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+
+                    <div class="card-header">
+                        Register
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <form action="/register" method="post">
+                                <div class="mb-3 col-sm-12">
+                                <label for="exampleInputEmail1" class="form-label">Username</label>
+                                <input name="username" autofocus type="text" class="form-control" id="exampleInputEmail1" aria-describedby="username">
+                                <div id="emailHelp" class="form-text">You can use your email, please do not user only numbers.</div>
+                                </div>
+                                <div class="mb-3 col-sm-12">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 col-sm-12">
+                                    <label for="exampleInputPassword1" class="form-label">Please Re-Type your Password</label>
+                                    <input name="password_confirmation" type="password" class="form-control" id="exampleInputPassword2">
+                                </div>
+                                <div class="mb-3 form-check col-sm-12">
+                                <input name="is_active" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">I accept terms and conditions.</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary col-sm-12">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <p>data: {{ data }}</p> -->
+
+{% endblock %}

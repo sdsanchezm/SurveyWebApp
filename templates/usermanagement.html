@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Users Management
+{% endblock %}
+
+{% block main %}
+
+    <h1>User Management</h1>
+    <div class="row p-4">
+        <div class="col-6">
+            <form action="/usermanagement" method="post">
+                <div class="card">
+                    <div class="card-header text-center">Password change</div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <select class="form-select my-3" name="username" aria-label="Default select example">
+                            <option selected>Select a user from the list</option>
+                            {% for user in data %}
+                            <option value="{{ user.users_name }}">{{ user.users_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="password" name="password" class="form-control" placeholder="new password" aria-label="password" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" type="submit" >Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

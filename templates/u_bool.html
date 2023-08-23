@@ -1,0 +1,13 @@
+<!-- Type Yes/No (bool) -->
+<div class="col-md-6 py-2 question" id="bool1">
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <p>{{ question1.questionset_question }}</p>
+        <div class="answer">
+            <input required class="form-check-input" type="radio" name="{{ question1.id }}" id="{{ question1.id }}" value="Yes">
+            <label class="form-check-label" for="radio1">Yes</label>
+            <input class="form-check-input" type="radio" name="{{ question1.id }}" id="{{ question1.id }}" value="No">
+            <label class="form-check-label" for="radio1">No</label>
+        </div>
+        
+    </div>
+</div>

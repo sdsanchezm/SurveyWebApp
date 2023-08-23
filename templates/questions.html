@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Questions
+{% endblock %}
+
+{% block main %}
+
+<div class="card mb-3 shadow" >
+  <div class="row g-0">
+
+    <div class="card-header text-center">
+      Questions
+    </div>
+    
+        <form action="/questions" method="post" class="needs-validation p-4" novalidate="">
+            <div class="row g-3">
+
+              <div class="col-sm-6">
+                <label for="questionName" class="form-label"> <span class="fw-bold">Question Name </span><span class="text-muted">(only for reference)</span></label>
+                <input name="questionName" type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <!-- <div class="invalid-feedback">
+                  Valid first name is required.
+                </div> -->
+              </div>
+
+              <div class="col-sm-12">
+                <label for="question" class="form-label"> <span class="fw-bold">Question </span><span class="text-muted">(this is the question that your user will see)</span></label>
+                <input name="question" type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <label for="typeQuestion" class="form-label"> <span class="fw-bold">Type of Question </span><span class="text-muted">(type of question, for users select a unique value)</span></label>
+                <select name="questionType" class="form-select mb-3" aria-label=".form-select-lg example">
+                    <option value="notvalid" selected>Open this select menu</option>
+                    <option value="radio">Radio</option>
+                    <option value="bool">Yes or No</option>
+                    <!-- <option value="text">Text</option> -->
+                    <option value="list">List</option>
+                  </select>
+              </div>
+
+              <!-- <div class="col-sm-12">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">active</label>
+              </div> -->
+
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+          </form>
+
+
+
+
+  </div>
+</div>
+
+<div class="card mb-3 col-sm-12 shadow">
+
+    <div class="card-header text-center">
+      List of Questions
+    </div>
+
+    <div class="card-body">
+      <div class="row g-0 p-4">
+          <table class="table">
+            <thead>
+              <th>Question Name</th>
+              <th>Question</th>
+              <th>Type</th>
+              <th>Owner</th>
+            </thead>
+            <tbody>
+              {% for item in data %}
+              <tr>
+                <td>{{ item.questionset_name }}</td>
+                <td>{{ item.questionset_question }}</td>
+                <td>{{ item.questionset_type_id }}</td>
+                <td>{{ item.questionset_user_owner }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

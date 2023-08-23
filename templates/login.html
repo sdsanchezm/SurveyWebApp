@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+
+                <div class="card-header text-center">
+                    Login
+                  </div>
+
+              <div class="col-md-12">
+                <div class="card-body">
+                    <form action="/login" method="POST">
+                        <div class="mb-3 col-sm-12">
+                          <label for="exampleInputEmailx" class="form-label">Username/Email </label>
+                          <!-- <input name="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                          <input name="username" type="text" class="form-control" id="exampleInputEmailx">
+                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3 col-sm-12">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check col-sm-12">
+                          <input name="isActive" type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">I accept terms and conditions.</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary col-sm-12">Submit</button>
+                      </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+{% endblock %}
