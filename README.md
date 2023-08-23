@@ -3,6 +3,7 @@
 ![image](https://img.shields.io/badge/Javascript-Vanilla-blue?labelColor=%23FFFF00)
 ![image](https://img.shields.io/badge/Python-Flask-green)
 ![image](https://img.shields.io/badge/Database-MySQL-gray?labelColor=%23e05a00)
+![image](https://img.shields.io/badge/CSS-Bootstrap-heliotrope?labelColor=%23800080)
 
 #### Video Demo:  https://youtu.be/4WOiZkpYgmk
 
